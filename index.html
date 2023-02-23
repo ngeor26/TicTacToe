@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mynerve">
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            font-family: Mynerve;
+        }
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, min(30vh, 30vw));
+            grid-template-rows: repeat(3, min(30vh, 30vw));
+            display: none;
+        }
+        .grid-box {
+            border: solid 1px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: calc(min(30vh, 30vw));
+            font-weight: lighter;
+        }
+        div {
+            pointer-events:all;
+        }
+        .grid-box0 {
+            border-top: 0px;
+            border-left: 0px;
+        }
+        .grid-box1 {
+            border-top: 0px;
+        }
+        .grid-box2 {
+            border-top: 0px;
+            border-right: 0px;
+        }
+        .grid-box3 {
+            border-left: 0px;
+        }
+        .grid-box5 {
+            border-right: 0px;
+        }
+        .grid-box6 {
+            border-left: 0px;
+            border-bottom: 0px;
+        }
+        .grid-box7 {
+            border-bottom: 0px;
+        }
+        .grid-box8 {
+            border-bottom: 0px;
+            border-right: 0px;
+        }
+        #selections{
+            display: flex;
+            flex-direction: column;
+            background-color: skyblue;
+            padding: 10px;
+            padding-inline: 5rem;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-top: 10rem;
+            width: 80%;
+            align-items: center;
+        }
+        input {
+            border-radius: 5px;
+            width: 40%;
+            font-size: xx-large;
+        }
+        img {
+            width: 100px;
+        }
+        #options {
+            margin-top: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: xx-large;
+        }
+        #selections > button {
+            width: 200px;
+            height: 40px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="selections">
+        <input type="text" placeholder="Player 1 Name">
+        <div id="options">
+            <img src="https://cdn-icons-png.flaticon.com/512/826/826118.png" alt="">
+            OR
+            <input type="text" placeholder="Player 2 Name">
+        </div>
+        <button>PLAY</button>
+    </div>
+    <div class="container">
+        <div class="grid-box grid-box0" data-desc="0"></div>
+        <div class="grid-box grid-box1" data-desc="1"></div>
+        <div class="grid-box grid-box2" data-desc="2"></div>
+        <div class="grid-box grid-box3" data-desc="3"></div>
+        <div class="grid-box grid-box4" data-desc="4"></div>
+        <div class="grid-box grid-box5" data-desc="5"></div>
+        <div class="grid-box grid-box6" data-desc="6"></div>
+        <div class="grid-box grid-box7" data-desc="7"></div>
+        <div class="grid-box grid-box8" data-desc="8"></div>
+    </div>
+    <p id="winner"></p>
+    <script src="script.js"></script>
+</body>
+</html>
